@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe PagesController do
 render_views
+
+before(:each) do
+	@base_title="RoR tutorial"
+	end
   describe "GET 'home'" do
     it "returns http success" do
       get 'home'
@@ -9,11 +13,11 @@ render_views
     end
 	it "should have the right title" do
 		get 'home'
-		response.should have_selector("title",:content=>"Ror tut|Home")
+		response.should have_selector("title",:content=>"#{@base_title}|Home")
 	end
 	it "should have the non-blank body" do
 		get 'home'
-		response.should_ not =~ /<body>\s*<\/body>
+		response.should_ not =~ /<body>\s*<\/body>/
 	end
   end
 
@@ -24,7 +28,7 @@ render_views
     end
 	it "should have the right title" do
 		get 'contact'
-		response.should have_selector("title",:content=>"Ror tut|contact")
+		response.should have_selector("title",:content=>"#{@base_title}|contact")
 	end
   end
 describe "GET 'about'" do
@@ -34,7 +38,7 @@ describe "GET 'about'" do
     end
 	it "should have the right title" do
 		get 'about'
-		response.should have_selector("title",:content=>"Ror tut|about")
+		response.should have_selector("title",:content=>"#{@base_title}|about")
 	end
   end
   
