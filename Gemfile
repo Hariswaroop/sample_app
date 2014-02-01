@@ -45,9 +45,11 @@ end
 # gem 'debugger', group: [:development, :test]
 
 group :development do
+ gem 'autotest'
  gem 'rspec-rails','2.14.1' 
 end
  
 group :test do
  gem 'rspec-rails','2.14.1'
+ 
 end

@@ -1,0 +1,91 @@
+﻿added some partials(including footer) in assets directory
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch filling-in-layout
+# Your branch is ahead of 'origin/filling-in-layout' by 2 commits.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#   (use "git reset HEAD^1 <file>..." to unstage)
+#
+#	modified:   Gemfile
+#	modified:   Gemfile.lock
+#	new file:   app/assets/images/logo.png
+#	new file:   app/assets/stylesheets/blueprint/ie.css
+#	new file:   app/assets/stylesheets/blueprint/plugins/buttons/icons/cross.png
+#	new file:   app/assets/stylesheets/blueprint/plugins/buttons/icons/key.png
+#	new file:   app/assets/stylesheets/blueprint/plugins/buttons/icons/tick.png
+#	new file:   app/assets/stylesheets/blueprint/plugins/buttons/readme.txt
+#	new file:   app/assets/stylesheets/blueprint/plugins/buttons/screen.css
+#	new file:   app/assets/stylesheets/blueprint/plugins/fancy-type/readme.txt
+#	new file:   app/assets/stylesheets/blueprint/plugins/fancy-type/screen.css
+#	new file:   app/assets/stylesheets/blueprint/plugins/link-icons/icons/doc.png
+#	new file:   app/assets/stylesheets/blueprint/plugins/link-icons/icons/email.png
+#	new file:   app/assets/stylesheets/blueprint/plugins/link-icons/icons/external.png
+#	new file:   app/assets/stylesheets/blueprint/plugins/link-icons/icons/feed.png
+#	new file:   app/assets/stylesheets/blueprint/plugins/link-icons/icons/im.png
+#	new file:   app/assets/stylesheets/blueprint/plugins/link-icons/icons/lock.png
+#	new file:   app/assets/stylesheets/blueprint/plugins/link-icons/icons/pdf.png
+#	new file:   app/assets/stylesheets/blueprint/plugins/link-icons/icons/visited.png
+#	new file:   app/assets/stylesheets/blueprint/plugins/link-icons/icons/xls.png
+#	new file:   app/assets/stylesheets/blueprint/plugins/link-icons/readme.txt
+#	new file:   app/assets/stylesheets/blueprint/plugins/link-icons/screen.css
+#	new file:   app/assets/stylesheets/blueprint/plugins/rtl/readme.txt
+#	new file:   app/assets/stylesheets/blueprint/plugins/rtl/screen.css
+#	new file:   app/assets/stylesheets/blueprint/print.css
+#	new file:   app/assets/stylesheets/blueprint/screen.css
+#	new file:   app/assets/stylesheets/blueprint/src/forms.css
+#	new file:   app/assets/stylesheets/blueprint/src/grid.css
+#	new file:   app/assets/stylesheets/blueprint/src/grid.png
+#	new file:   app/assets/stylesheets/blueprint/src/ie.css
+#	new file:   app/assets/stylesheets/blueprint/src/print.css
+#	new file:   app/assets/stylesheets/blueprint/src/reset.css
+#	new file:   app/assets/stylesheets/blueprint/src/typography.css
+#	new file:   app/assets/stylesheets/custom.css
+#	modified:   app/controllers/pages_controller.rb
+#	modified:   app/views/layouts/_footer.html.erb
+#	modified:   app/views/layouts/_header.html.erb
+#	new file:   app/views/pages/help.html.erb
+#	modified:   config/routes.rb
+#	modified:   spec/controllers/pages_controller_spec.rb
+#	new file:   spec/requests/layouts_links_spec.rb
+#
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    public/images/logo.png
+#	deleted:    public/stylesheets/blueprint/ie.css
+#	deleted:    public/stylesheets/blueprint/plugins/buttons/icons/cross.png
+#	deleted:    public/stylesheets/blueprint/plugins/buttons/icons/key.png
+#	deleted:    public/stylesheets/blueprint/plugins/buttons/icons/tick.png
+#	deleted:    public/stylesheets/blueprint/plugins/buttons/readme.txt
+#	deleted:    public/stylesheets/blueprint/plugins/buttons/screen.css
+#	deleted:    public/stylesheets/blueprint/plugins/fancy-type/readme.txt
+#	deleted:    public/stylesheets/blueprint/plugins/fancy-type/screen.css
+#	deleted:    public/stylesheets/blueprint/plugins/link-icons/icons/doc.png
+#	deleted:    public/stylesheets/blueprint/plugins/link-icons/icons/email.png
+#	deleted:    public/stylesheets/blueprint/plugins/link-icons/icons/external.png
+#	deleted:    public/stylesheets/blueprint/plugins/link-icons/icons/feed.png
+#	deleted:    public/stylesheets/blueprint/plugins/link-icons/icons/im.png
+#	deleted:    public/stylesheets/blueprint/plugins/link-icons/icons/lock.png
+#	deleted:    public/stylesheets/blueprint/plugins/link-icons/icons/pdf.png
+#	deleted:    public/stylesheets/blueprint/plugins/link-icons/icons/visited.png
+#	deleted:    public/stylesheets/blueprint/plugins/link-icons/icons/xls.png
+#	deleted:    public/stylesheets/blueprint/plugins/link-icons/readme.txt
+#	deleted:    public/stylesheets/blueprint/plugins/link-icons/screen.css
+#	deleted:    public/stylesheets/blueprint/plugins/rtl/readme.txt
+#	deleted:    public/stylesheets/blueprint/plugins/rtl/screen.css
+#	deleted:    public/stylesheets/blueprint/print.css
+#	deleted:    public/stylesheets/blueprint/screen.css
+#	deleted:    public/stylesheets/blueprint/src/forms.css
+#	deleted:    public/stylesheets/blueprint/src/grid.css
+#	deleted:    public/stylesheets/blueprint/src/grid.png
+#	deleted:    public/stylesheets/blueprint/src/ie.css
+#	deleted:    public/stylesheets/blueprint/src/print.css
+#	deleted:    public/stylesheets/blueprint/src/reset.css
+#	deleted:    public/stylesheets/blueprint/src/typography.css
+#	deleted:    public/stylesheets/custom.css
+#
+
