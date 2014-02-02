@@ -1,0 +1,4 @@
+# Logfile created on 2014-02-02 21:29:12 +0530 by logger.rb/31641
+D, [2014-02-02T21:29:12.308191 #5352] DEBUG -- : REQUESTING PAGE: GET / with {} and HTTP headers {}
+D, [2014-02-02T21:29:12.355092 #5352] DEBUG -- : REQUESTING PAGE: GET /about with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+D, [2014-02-02T21:29:12.370706 #5352] DEBUG -- : REQUESTING PAGE: GET /contact with {} and HTTP headers {"HTTP_REFERER"=>"/about"}
