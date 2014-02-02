@@ -47,10 +47,11 @@ end
  gem 'nokogiri','1.6.1'
 group :development do
  gem 'autotest'
- gem 'rspec-rails','2.14.1' 
+ gem 'rspec-rails','2.14.1'
 end
  
 group :test do
  gem 'rspec-rails','2.14.1'
  gem 'webrat','0.7.3'
+ gem 'spork','0.9.2'
 end
