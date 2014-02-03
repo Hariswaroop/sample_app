@@ -9,7 +9,7 @@ SampleApp::Application.routes.draw do
   get '/help'=>'pages#help'
   get '/signup'=>'users#new'
   get '/signin'=>'sessions#new'
-  delete '/signout'=>'sessions#destroy' 
+  get '/signout'=>'sessions#destroy' 
   #match '/contact',:to=>'pages#contact'
   #match '/about',:to=>'pages#about'
   #match '/help',:to=>'pages#help'
