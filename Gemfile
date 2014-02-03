@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 gem 'protected_attributes'
+gem 'gravatar_image_tag','1.1.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 

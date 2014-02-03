@@ -17,8 +17,8 @@ validates :email, :presence=>true,
 				  :format=> {:with=>email_regex},
 				  :uniqueness=>{:case_sensitive=>false}
 validates :password, :presence =>true,
-				    :confirmation=true,
-					  :length=>{:within=>6..40)
+				    :confirmation=>true,
+					  :length=>{:within=>6..40}
  
 before_save :encrypt_password
 
@@ -44,7 +44,7 @@ private
   secure_hash("#{salt}--#{string}")
    end
    
-  def make_salt(string)
+  def make_salt
   secure_hash("#{Time.now.utc}--#{password}")
   end
   
