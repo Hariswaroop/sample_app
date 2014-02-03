@@ -79,10 +79,12 @@ end
       post :create, :user=>@attr
     end.should_not change(User,:count).by(1)
   end
+
   it "should redirect to the user show page" do
       post :create, :user=>@attr
       response.should redirect_to(user_path(assigns(:user)))
     end
+    
   it "should have a welcome message" do
      post :create, :user=>@attr
      flash[:success].should=~ /welcome to the sample app/i
