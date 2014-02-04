@@ -22,11 +22,14 @@ describe "LayoutsLinks" do
 	get '/signup'
 	response.should have_selector('title',:content=>"Sign Up")
 	end
+<<<<<<< HEAD
 	it "should have a Signin Page at '/signin'" do
 	get '/signin'
 	response.should have_selector('title',:content=>"Sign in")
 	end
 
+=======
+>>>>>>> origin/filling-in-layout
 	it "should have a right link on the layout" do
 	visit root_path
 	response.should have_selector('title',:content=>"Home")
@@ -38,6 +41,7 @@ describe "LayoutsLinks" do
 	response.should have_selector('title',:content=>"Sign up")
 	response.should have_selector('a[href="/"]>img')
 	end
+<<<<<<< HEAD
 	describe "when not signed in" do
 		it "should have a signin link" do
 		vist root_path
@@ -66,3 +70,6 @@ describe "LayoutsLinks" do
 	end
 
 end
+=======
+end
+>>>>>>> origin/filling-in-layout

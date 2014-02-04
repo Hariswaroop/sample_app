@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def new
+<<<<<<< HEAD
    @title="Sign Up" 
    @user=User.new 
   end
@@ -19,4 +20,8 @@ sign_in @user
 	render 'new'
   end
  end 
+=======
+@title="Sign Up"  
+  end
+>>>>>>> origin/filling-in-layout
 end

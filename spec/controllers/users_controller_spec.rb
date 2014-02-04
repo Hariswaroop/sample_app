@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe UsersController do
 render_views 
+<<<<<<< HEAD
 
   describe "GET 'show'" do
   before(:each) do
@@ -96,3 +97,13 @@ end
 end
 end
 end
+=======
+  describe "GET 'new'" do
+    it "returns http success" do
+      get 'new'
+      response.should be_success
+    end
+  end
+
+end
+>>>>>>> origin/filling-in-layout

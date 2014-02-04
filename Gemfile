@@ -54,6 +54,9 @@ end
 group :test do
  gem 'rspec-rails','2.14.1'
  gem 'webrat','0.7.3'
+<<<<<<< HEAD
  gem 'spork','0.9.2'
  gem 'factory_girl_rails','1.0'
+=======
+>>>>>>> origin/filling-in-layout
 end

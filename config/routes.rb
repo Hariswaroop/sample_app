@@ -1,15 +1,22 @@
 SampleApp::Application.routes.draw do
+<<<<<<< HEAD
   #get "sessions/new"
   resources :users
   resources :sessions, :only=>[:new,:create,:destroy]
   #get "users/new"
+=======
+  get "users/new"
+>>>>>>> origin/filling-in-layout
   root :to=>'pages#home'
   get '/contact'=>'pages#contact'
   get '/about'=>'pages#about'
   get '/help'=>'pages#help'
   get '/signup'=>'users#new'
+<<<<<<< HEAD
   get '/signin'=>'sessions#new'
   get '/signout'=>'sessions#destroy' 
+=======
+>>>>>>> origin/filling-in-layout
   #match '/contact',:to=>'pages#contact'
   #match '/about',:to=>'pages#about'
   #match '/help',:to=>'pages#help'
