@@ -4,6 +4,7 @@ describe UsersController do
 render_views 
 
 
+
   describe "GET 'show'" do
   before(:each) do
 	@user=Factory(:user)
@@ -97,7 +98,6 @@ end
 end
 end
 end
-
   describe "GET 'new'" do
     it "returns http success" do
       get 'new'
@@ -106,4 +106,3 @@ end
   end
 
 end
-
