@@ -1,5 +1,4 @@
 SampleApp::Application.routes.draw do
-<<<<<<< HEAD
   #get "sessions/new"
   resources :users
   resources :sessions, :only=>[:new,:create,:destroy]
