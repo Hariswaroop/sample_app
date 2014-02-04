@@ -3,6 +3,7 @@ SampleApp::Application.routes.draw do
   resources :users
   resources :sessions, :only=>[:new,:create,:destroy]
   #get "users/new"
+  get "users/new"
   root :to=>'pages#home'
   get '/contact'=>'pages#contact'
   get '/about'=>'pages#about'

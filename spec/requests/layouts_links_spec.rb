@@ -22,6 +22,7 @@ describe "LayoutsLinks" do
 	get '/signup'
 	response.should have_selector('title',:content=>"Sign Up")
 	end
+
 	it "should have a Signin Page at '/signin'" do
 	get '/signin'
 	response.should have_selector('title',:content=>"Sign in")
@@ -38,6 +39,7 @@ describe "LayoutsLinks" do
 	response.should have_selector('title',:content=>"Sign up")
 	response.should have_selector('a[href="/"]>img')
 	end
+
 	describe "when not signed in" do
 		it "should have a signin link" do
 		vist root_path
@@ -66,3 +68,4 @@ describe "LayoutsLinks" do
 	end
 
 end
+
