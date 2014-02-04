@@ -44,11 +44,12 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+ gem 'will_paginate' , '3.0.5'
  gem 'nokogiri','1.6.1'
 group :development do
  gem 'autotest'
  gem 'rspec-rails','2.14.1'
+ gem 'faker','1.2.0'
 end
  
 group :test do
