@@ -144,6 +144,30 @@ end
 			@user.toggle!(:admin)
 			@user.should be_admin
 		end
-
 	end
+	
+	describe  "micropost associations " do
+  		before(:each) do
+  	 		@user=User.micropost.create!(attr)
+  	 		@mp1=Factory(:microposts, :user=>@user, :created_at =>1.day.ago)
+  			@mp2=Factory(:microposts, :user=>@user, :created_at =>1.hour.ago)
+		end
+
+	  	it "should have a micropost attribute" do
+  			@user.should respond_to(:microposts)
+  		end
+
+  		it "should have right microposts in the right order" do
+  			@user.microposts.should==[@mp2,@mp1]
+  		end
+
+  		it "should destroy associated micropost" do
+  			@user.destroy
+  			[@mp1,@mp2].each do |micropost|
+  				lambda do
+  				Micropost.find(microposts)
+  		end.should raise_error(ActiveRecord::RecordNotFound)
+  		end
+  	end
+	end		
 end

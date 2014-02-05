@@ -6,12 +6,15 @@
 #updated_at 	:datetime
 #encrypted_password  :string(255)
 #salt               :string(255)
+#admin              :boolean
 
 class User < ActiveRecord::Base
   attr_accessible :name, :email,:password,:password_confirmation
   attr_accessor :password
-
+  has_many( :microposts, :dependent=>destroy)
+  
   email_regex=/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  
   validates :name, :presence=>true,
 				 :length=>{:maximum=>50}
   validates :email, :presence=>true, 
