@@ -17,6 +17,7 @@
   def show
     @user=User.find(params[:id])
     @title=@user.name
+    @microposts=@user.microposts.paginate(:page=>params[:page])
   end
 
   def create
@@ -24,7 +25,7 @@
 	   if @user.save
       sign_in @user
 	     redirect_to @user, :flash=>{:success=>"welcome to Sample app!"} 
-   else
+     else
 	     @title="sign up"
 	     render 'new'
       end
@@ -46,8 +47,7 @@
  end
 
  def destroy
-    User.find(params[:id]).destroy
-    #flash[:success]="User Destroyed"  
+    @user.destroy
     redirect_to users_path,:flash=> {:success=>"User Destroyed" }
   end
 
@@ -62,7 +62,7 @@
     end
 
     def admin_user
-      user=User.find(params[:id])
+      @user=User.find(params[:id])
       redirect_to(root_path) if !current_user.admin? || current_user?(user)
       end
 end

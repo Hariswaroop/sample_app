@@ -1,7 +1,7 @@
 module SessionsHelper
 	def sign_in(user)
-cookies.permanent.signed[:remember_token]=[user.id,user.salt]
-current_user=user
+		cookies.permanent.signed[:remember_token]=[user.id,user.salt]
+		current_user=user
 	end
 
 	def current_user=(user)
@@ -29,6 +29,10 @@ current_user=user
 		store_location
     	redirect_to signin_path, :notice=> "Please sign in to access this page"
     end
+
+    def  authenticate
+    	deny_access unless signed_in?
+  	end
 
     def store_location
 		session[:return_to]=request.fullpath
