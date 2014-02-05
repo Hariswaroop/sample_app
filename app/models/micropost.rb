@@ -1,3 +1,4 @@
+#Table name  :microposts
 #id :integer not null, primary key
 #content :string(255)
 #user_id :integer
@@ -6,7 +7,11 @@
 #
 class Micropost < ActiveRecord::Base
 	attr_accessible :content
+	
 	belongs_to :user
 
-default_scope :order=>'microposts.created_at DESC'  #disply latest at top
+	validates :content, :presence=>true, :length=>{:maximum=>140}
+	validates :user_id, :presence=>true
+	
+	default_scope :order=>'microposts.created_at DESC'  #disply latest at top
 end
