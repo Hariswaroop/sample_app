@@ -10,9 +10,9 @@ render_views
     it "should have right title" do
 	get :new 
 	response.should have_selector('title', :content=>"Sign in")
-	 end
+	end
   end
-	describe" :POST 'create '" do
+  describe" :POST 'create '" do
 		describe "failure" do
 			before(:each) do
 				@attr={:email=>"", :password=>""}
@@ -36,7 +36,7 @@ render_views
 		describe "success" do
 			before(:each) do
 				@user=Factory(:user)
-				@attr={:email=>@user.email, :password=>@user,password}
+				@attr={:email=>@user.email, :password=>@user.password}
 
 			end
 
@@ -54,7 +54,7 @@ render_views
 		end
 	end	
 
-	decribe "DELETE 'destroy'" do
+	describe "DELETE 'destroy'" do
 		it "should sign a user out" do
 			delete :destroy
 			controller.should_not be_signed_in
