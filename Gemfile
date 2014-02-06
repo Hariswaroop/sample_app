@@ -4,8 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 gem 'protected_attributes'
 gem 'gravatar_image_tag','1.1.3'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '1.3.8'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -51,15 +50,17 @@ end
 
  gem 'will_paginate' , '3.0.5'
  gem 'nokogiri','1.6.1'
+
+ gem 'rspec-rails','2.14.1' ,:group=>[:development, :test]
+
+ # Use sqlite3 as the database for Active Record 
+ gem 'sqlite3', '1.3.8', :group=>[:development, :test]
+
 group :development do
  gem 'autotest'
- gem 'rspec-rails','2.14.1'
  gem 'faker','1.2.0'
 end
  
 group :test do
- gem 'rspec-rails','2.14.1'
- gem 'webrat','0.7.3'
- gem 'spork','0.9.2'
  gem 'factory_girl_rails','1.0'
 end
