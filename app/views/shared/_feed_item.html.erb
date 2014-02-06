@@ -13,9 +13,10 @@
 	</td>
 	<% if current_user?(feed_item.user) %>
 	<td>
-		<%= link_to "delete", feed_item, :method=>:delete,
-											:confirm=>"you sure?",
+		<%= link_to "delete", feed_item,    :method=>:delete,
+											
 											:title=> feed_item.content %>
+	Del
 	</td>
 	<% end %>
 	</tr> 
