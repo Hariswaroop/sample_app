@@ -5,7 +5,7 @@ gem 'rails', '4.0.2'
 gem 'protected_attributes'
 gem 'gravatar_image_tag','1.1.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', '1.3.8'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
