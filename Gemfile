@@ -44,6 +44,11 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :production do
+	gem 'pg', '0.15.1'
+end
+
  gem 'will_paginate' , '3.0.5'
  gem 'nokogiri','1.6.1'
 group :development do
