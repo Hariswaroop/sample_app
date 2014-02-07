@@ -1,18 +1,18 @@
 require 'spec_helper'
 
 describe SessionsController do
-render_views
-  describe "GET 'new'" do
-    it "returns http success" do
-      get 'new'
-      response.should be_success
-    end
-    it "should have right title" do
-	get :new 
-	response.should have_selector('title', :content=>"Sign in")
-	end
-  end
-  describe" :POST 'create '" do
+	render_views
+  	describe "GET 'new'" do
+    	it "returns http success" do
+      	    get 'new'
+     		response.should be_success
+    	end
+    	it "should have right title" do
+			get :new 
+			response.should have_selector('title', :content=>"Sign in")
+		end
+  	end
+   describe" :POST 'create '" do
 		describe "failure" do
 			before(:each) do
 				@attr={:email=>"", :password=>""}
@@ -50,7 +50,6 @@ render_views
 				post :create, :session=>@attr
 				response.should redirect_to(user_path(@user))
 			end
-
 		end
 	end	
 

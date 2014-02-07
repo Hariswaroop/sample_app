@@ -58,6 +58,7 @@ describe MicropostsController do
 			end
 		end
 	end
+
 	describe "DELETE 'destroy'" do
 		describe "for an unauthorized user " do
 			before(:each) do
@@ -81,8 +82,8 @@ describe MicropostsController do
 					delete :destroy, :id=>@micropost
 					flash[:success].should=~/micropost deleted/i
 					response.should redirect_to(root_path)
-			end.should change(Micropost, :count).by(-1)	
-		end
-	end	
-end
+				end.should change(Micropost, :count).by(-1)	
+			end
+		end	
+	end
 end
