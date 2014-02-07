@@ -46,6 +46,7 @@ end
 
 group :production do
 	gem 'pg', '0.15.1'
+	gem 'rails_12factor','0.0.2'
 end
 
  gem 'will_paginate' , '3.0.5'
@@ -58,7 +59,7 @@ end
 
 group :development do
  gem 'autotest'
- gem 'faker','1.2.0'
+ gem 'faker','1.2.0', :require=>false
 end
  
 group :test do
