@@ -1,65 +1,66 @@
 require 'spec_helper'
 
 describe User do
-before(:each) do
-@attr={:name=>"Example User", 
+	before(:each) do
+	@attr={:name=>"Example User", 
 	    :email=>"user@example.com",
 	    :password=>"foobar",
 		:password_confirmation=>"foobar"}
-end
+	end
 
-it "should create a new instance given a valid attribute" do
-User.create!(@attr)
-end
+	it "should create a new instance given a valid attribute" do
+		User.create!(@attr)
+	end
 
-it "should require a name" do
-no_name_user=User.new(@attr.merge(:name=>""))
-no_name_user.should_not be_valid
-end
-it "should require an email" do
-no_email_user=User.new(@attr.merge(:email=>""))
-no_email_user.should_not be_valid
-end
+	it "should require a name" do
+		no_name_user=User.new(@attr.merge(:name=>""))
+		no_name_user.should_not be_valid
+	end
+	it "should require an email" do
+		no_email_user=User.new(@attr.merge(:email=>""))
+		no_email_user.should_not be_valid
+	end
 
-it "should reject names that are too long"
-long_name="a"*51
-long_name_user=User.new(@attr.merge(:name=>long_name))
-long_name_user.should_not be_valid
- end
- it "should accept valid email address" do
- address=%w[user@foo.com THE_USER@foo.bar.org first.last@foo.jp]
- address.each do |adddress|
-	valid_email_user=User.new(@attr.merge(:email=>address))
-	valid_email_user.should be_valid
-  end
- end
- it "should reject invalid email address" do
- address=%w[user@foo,com user_at_foo.org example.user@foo]
- address.each do |adddress|
-	invalid_email_user=User.new(@attr.merge(:email=>address))
-	invalid_email_user.should_not be_valid
-  end
-end
-it "should reject duplicate email addresses" do
-User.create!(@attr)
-user_with_duplicate_email=User.new(@attr)
-user_with_duplicate_email.should_not be valid
-end
-it "should reject email address identical up to case" do
-upcased_email=@attr[:email].upcase
-User.create!(@attr.merge(:email=>upcased_email))
-User_with_duplicate_email=User.new(@attr)
-user_with_duplicate_email.should_not be valid
-end
+	it "should reject names that are too long"
+		long_name="a"*51
+		long_name_user=User.new(@attr.merge(:name=>long_name))
+		long_name_user.should_not be_valid
+	 end
+	 it "should accept valid email address" do
+	 	address=%w[user@foo.com THE_USER@foo.bar.org first.last@foo.jp]
+		address.each do |adddress|
+			valid_email_user=User.new(@attr.merge(:email=>address))
+			valid_email_user.should be_valid
+	  	end
+	 end
+    it "should reject invalid email address" do
+	 	address=%w[user@foo,com user_at_foo.org example.user@foo]
+	 	address.each do |adddress|
+			invalid_email_user=User.new(@attr.merge(:email=>address))
+			invalid_email_user.should_not be_valid
+	  	end
+	end
+	it "should reject duplicate email addresses" do
+		User.create!(@attr)
+		user_with_duplicate_email=User.new(@attr)
+		user_with_duplicate_email.should_not be valid
+	end
+	it "should reject email address identical up to case" do
+		upcased_email=@attr[:email].upcase
+		User.create!(@attr.merge(:email=>upcased_email))
+		User_with_duplicate_email=User.new(@attr)
+		user_with_duplicate_email.should_not be valid
+	end
+
 describe "passwords" do
-  before(:each) do
-	@user=User.new(attr)
+	before(:each) do
+		@user=User.new(attr)
 	end
 	it "should have a password attribute" do
-	User.new(@attr).should respond_to(:password)
+		User.new(@attr).should respond_to(:password)
 	end
 	it "should have a password confirmation attribute" do
-	User.new(@attr).should respond_to(:password_confirmation)
+		User.new(@attr).should respond_to(:password_confirmation)
 	end
 end
 
@@ -70,7 +71,7 @@ should_not be_valid
 	end
 	it "should require matching password confirmation" do
 		User.new(@attr.merge(:password_confirmation=>"invalid"))
-should_not be_valid
+		should_not be_valid
 	end
 	it "should reject short passwords" do
 		short="a"*5
@@ -86,9 +87,9 @@ should_not be_valid
 end
 
 describe "password encryption" do
-before(:each) do
-@user=User.create!(@attr)
-end
+	before(:each) do
+		@user=User.create!(@attr)
+	end
 	it "should have an encrypted password attribute" do
 		@user.should respond_to(:encrypted_password)
 	end
@@ -103,7 +104,7 @@ end
 describe "has_password? method" do
 	it "should exist" do
 		@user.should respond_to(:has_password?)
-		end
+	end
 	it "should return true if the passwords match" do
 		@user.has_password?(@attr[:password]).should be_true
 	end
@@ -123,28 +124,28 @@ describe "authentication method" do
 		User.authenticate("bar@foo.com",@attr[:password]).should be_nil
 	end
 	it "should return the user on email/password match" do
-		User.authenticate(@attr[:email],@attr[:password]).should==
-@user
+		User.authenticate(@attr[:email],@attr[:password]).should==@user
 	end
 end
 end
-	describe "admin attribute" do
 
-		before(:each) do
-			@user=User.create(@attr)
-		end
+describe "admin attribute" do
 
-		it "should respond to admin " do
-			@user.should respond_to(:admin)
-		end
-		it "should  not be an admin by default " do
-			@user.should_not be_admin
-		end
-		it "should be convertible to an admin " do
-			@user.toggle!(:admin)
-			@user.should be_admin
-		end
+	before(:each) do
+		@user=User.create(@attr)
 	end
+
+	it "should respond to admin " do
+		@user.should respond_to(:admin)
+	end
+	it "should  not be an admin by default " do
+		@user.should_not be_admin
+	end
+	it "should be convertible to an admin " do
+		@user.toggle!(:admin)
+		@user.should be_admin
+	end
+end
 	
 	describe  "micropost associations " do
   		before(:each) do
@@ -165,23 +166,30 @@ end
   			@user.destroy
   			[@mp1,@mp2].each do |micropost|
   				lambda do
-  				Micropost.find(microposts)
-  		end.should raise_error(ActiveRecord::RecordNotFound)
+  					Micropost.find(microposts)
+  				end.should raise_error(ActiveRecord::RecordNotFound)
+  			end
   		end
-  	end
+  	
   	describe "status feed" do
   		it "should respond to feed " do
   			@user.should respond_to(:feed)
   		end
   		it "should include user's microposts" do
-  			@user.feed include(@mp1)
-  			@user.feed include(@mp1)
+  			@user.feed.should include(@mp1)
+  			@user.feed.should include(@mp1)
   		end
   		it "should not include diffeent user's microposts" do
-  			mp3=Factory(:microposts, :user=>Factory(:user, :email=>Factory.next(email))
+  			mp3=Factory(:micropost, :user=>Factory(:user, :email=>Factory.next(email))
 			@user.feed should_not include(@mp3)
 	  	end
-  	end
+
+	  	it "should include the microposts of the followed users" do
+	  		followed=Factory(:user, :email=>Factory.next(:email))
+	  		mp3=Factory(:micropost, :user=>followed)
+	  		@user.follow!(followed)
+	  		@user.feed.should include(mp3)
+ 	end
 end	
 
 describe "relationships" do
