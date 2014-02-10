@@ -52,10 +52,10 @@ end
  gem 'will_paginate' , '3.0.5'
  gem 'nokogiri','1.6.1'
 
- gem 'rspec-rails','2.14.1' ,:group=>[:development, :test]
+ gem 'rspec-rails','2.14.1' , group: [:development, :test]
 
  # Use sqlite3 as the database for Active Record 
- gem 'sqlite3', '1.3.8', :group=>[:development, :test]
+ gem 'sqlite3', '1.3.8', group: [:development, :test]
 
 group :development do
  gem 'autotest'
