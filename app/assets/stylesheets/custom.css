@@ -63,7 +63,7 @@ padding:0.2em,0em;
 }
 
 nav ul li a {
-padding: 0px 5px;
+padding: 0px, 5px;
 font-weight:bold;
 }
 
@@ -115,17 +115,17 @@ table.profile{
 	margin-bottom: 0px;
 }
 td.main{
-	width: 70%
+	width: 70%;
 	padding:1em;
 }
 td.sidebar{
-	width: 30%
-	padding1em;
+	width: 30%;
+	padding: 1em;
 	vertical-align: top;
 	background: #ffc;
 }
 .profile img.gravatar{
-	border: :1px solid #999;
+	border: 1px solid #999;
 	margin-bottom: -15px; 
 }
 
