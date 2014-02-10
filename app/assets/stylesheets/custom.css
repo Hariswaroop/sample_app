@@ -47,8 +47,8 @@ white-space:nowrap;
 }
 
 nav ul{
-margin:0;
-padding:0;
+margin:0px;
+padding:0px;
 }
 
 nav ul li{
@@ -59,11 +59,11 @@ display:inline-block;
 nav ul li {
 list-style-type:none;
 display:inline-block;
-padding:0.2em,0;
+padding:0.2em,0em;
 }
 
 nav ul li a {
-padding: 0 5px;
+padding: 0px 5px;
 font-weight:bold;
 }
 
@@ -112,7 +112,7 @@ footer nav {
 /*User Show Page*/
 table.profile{
 	width: 100%;
-	margin-bottom: :0;
+	margin-bottom: :0px;
 }
 td.main{
 	width: 70%
@@ -166,7 +166,7 @@ div.field, div.actions{
 
 #error_explanation p{
 color: #333;
-margin-bottom: 0;
+margin-bottom: 0px;
 padding: 5px;
 }
 
@@ -227,7 +227,7 @@ form.new_micropost{
 
 form.new_micropost textarea{
 	height: 4em;
-	margin-bottom: 0;
+	margin-bottom: 0px;
 }
 
 
