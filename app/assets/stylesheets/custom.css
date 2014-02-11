@@ -1,3 +1,4 @@
+@import "bootstrap";
 .container{
 position: relative;
 min-height: 100%;
@@ -59,11 +60,11 @@ display:inline-block;
 nav ul li {
 list-style-type:none;
 display:inline-block;
-padding:0.2em,0em;
+padding:0.2em 0em;
 }
 
 nav ul li a {
-padding: 0px, 5px;
+padding: 0px 5px;
 font-weight:bold;
 }
 
