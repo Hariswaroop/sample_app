@@ -35,10 +35,10 @@ class UsersController < ApplicationController
   end
 
   def create
- 	  @user=User.new(params[:user])
+ 	  @user=User.new(user_params)
 	   if @user.save
       sign_in @user
-	     redirect_to @user, :flash=>{:success=>"welcome to Sample app!"} 
+	     redirect_to @user, :flash=>{:success=>"welcome to Have Fun!"} 
      else
 	     @title="sign up"
 	     render 'new'
@@ -66,6 +66,12 @@ class UsersController < ApplicationController
   end
 
   private
+
+    def user_params
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+
+
     def  authenticate
       deny_access unless signed_in?
     end

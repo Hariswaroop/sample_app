@@ -1,120 +1,155 @@
 @import "bootstrap";
 
-.container{
-position: relative;
-min-height: 100%;
-}
-body{
-background:#cff;
-}
-header{
-padding-top:20px;
-}
-header img{
-padding:1em;
-background:#fff;
-}
-section{
-margin-top:1em;
-font-size:20px;
-padding:20px;
-background:#fff;
-}
-section h1{
-font-size:150%;
-}
-/* links */
-
-a{
-color:#09c;
-text-decoration:none;
+/* mixins, variables, etc. */
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-a:hover{
-color:#069;
-text-decoration:underline;
-}
-a:visited{
-color:#069;
+/*universal*/
 
-}
- 
-/*navigation*/
 
-nav {
-float:right;
-background:white;
-padding:0 0.7em;
-white-space:nowrap;
+html {
+  overflow-y: scroll;
 }
 
-nav ul{
-margin:0px;
-padding:0px;
+body {
+  padding-top: 80px;
 }
 
-nav ul li{
-list-style-type:none;
-display:inline-block;
+section {
+  overflow: auto;
 }
 
-nav ul li {
-list-style-type:none;
-display:inline-block;
-padding:0.2em,0em;
+textarea {
+  resize: vertical;
 }
 
-nav ul li a {
-padding: 0px, 5px;
-font-weight:bold;
+.center {
+  text-align: center;
 }
 
-nav ul li a:visited{
-color:#09c;
+.center h1 {
+  margin-bottom: 10px;
 }
 
-nav ul li a:hover{
-text-decoration:underline;
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
 }
 
-/*Sign up Button*/
-
-a.signup_button{
-margin-left:auto;
-margin-right:auto;
-display:block;
-text-align:center;
-width:190px;
-color:#fff;
-background: #006400;
-font-size: 100%;
-font-weight:bold;
-padding:20px;
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
-/*round corners*/
-.round {
--moz-border-radius:10px;
--webkit-border-radius:10px;
- border-radius:10px;
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #999;
 }
 
-/*Footer*/
-
-footer{
-  text-align:center;
-  margin-top:10px;
-  margin-left:auto;
-  margin-right:auto;
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
 }
 
-footer nav {
-  float:none;
+
+/* header */
+
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  line-height: 1;
 }
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+  float:center;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+}
+
+
+
+
 /*User Show Page*/
 table.profile{
   width: 100%;
   margin-bottom: 0px;
+
 }
 td.main{
   width: 70%;
@@ -126,64 +161,19 @@ td.sidebar{
   vertical-align: top;
   background: #ffc;
 }
+
+td.sidebar.inner{
+  width:50%;
+  }
+
 .profile img.gravatar{
   border: 1px solid #999;
-  margin-bottom: -15px; 
+  margin-bottom: 0px; 
 }
 
 div.field, div.actions{
   margin-bottom: 10px;
   }
-  
-/*Error messages*/  
-.field_with_errors{
-    margin-top: 10px;
-    padding: 2px;
-    background-color: red;
-    display: table; 
-  }
-
-.field_with_errors_label{
-  color: #fff;
-  }
-
-#error_explanation{
-  width: 400px;
-  border:2px solid red;
-  padding: 7px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-}
-
-#error_explanation h2{
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 5px;
-  font-size: 12px;
-  margin: -7px;
-  background-color: #c00;
-  color: #fff;
-} 
-
-#error_explanation p{
-color: #333;
-margin-bottom: 0px;
-padding: 5px;
-}
-
-#error_explanation ul li{
-  font-size: 12px;
-  list-style: square;
-}
-
-ul.users {
-  margin-top: 1em;
-}
-
-ul.users.li{
-  list-style: none;
-}
 
 /*micropost style*/
 
@@ -212,15 +202,17 @@ table.microposts tr td.micropost span.timestamp{
 }
 
 div.user_info img{
-  padding-right: 0.1em;
+  padding-right: 1em;
 }
 
 div.user_info a{
+ padding-right: 0.1em;
   text-decoration: none;
 }
 
 div.user_info span.microposts{
-  font-size: 80%;
+  padding:3em;
+  font-size: 100%;
 }
 
 form.new_micropost{
@@ -233,3 +225,12 @@ form.new_micropost textarea{
 }
 
 
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+  }

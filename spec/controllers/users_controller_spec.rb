@@ -79,7 +79,7 @@ describe UsersController do
     end
     it "should have profile image" do
 	    get :show, :id=>@user
-      response.should have_selector('h1>img', :class="gravatar")
+      response.should have_selector('h1>img', :class=> "gravatar")
     end
     it "should have right url " do
 		  get :show, :id=>@user
@@ -118,7 +118,7 @@ describe UsersController do
   describe "POST 'create' " do
     describe "failure" do
       before(:each) do
-        @attr= {:name=>"",:email=>"" :password=>"",:password_confirmation=>""}
+        @attr= {:name=>"",:email=>"", :password=>"",:password_confirmation=>""}
       end
   
       it "should have the right title" do
@@ -194,15 +194,15 @@ describe UsersController do
        
     describe "failure" do 
       before(:each) do
-        @attr= {:name=>"",:email=>"" :password=>"",:password_confirmation=>""}
+        @attr= {:name=>"",:email=>"", :password=>"",:password_confirmation=>""}
       end
 
       it "should render the 'edit' page" do
-        put :update :id=>@user :user=>@attr
+        put :update, :id=>@user, :user=>@attr
         response.should render_template('edit') 
       end
       it "should have a right title" do
-        put :update :id=>@user :user=>@attr
+        put :update, :id=>@user, :user=>@attr
         response.should have_selector('title',:content=>"Edit user")
       end
     end
@@ -266,7 +266,7 @@ describe UsersController do
     end
     describe "as a non-signed-in user" do
       it "should deny access" do
-        delete:destroy id:=>@user
+        delete :destroy, :id=>@user
         response.should redirect_to(signin_path)
       end
     end
@@ -316,11 +316,11 @@ describe UsersController do
       end
       it "should show user'following'" do
          get :following, :id=>@user
-         response.should have_selector('a', :href=>user_path(@other_user)
+         response.should have_selector('a', :href=>user_path(@other_user))
       end
       it "should show user'followers'" do
           get :following, :id=>@other_user
-          response.should have_selector('a', :href=>user_path(@user)
+          response.should have_selector('a', :href=>user_path(@user),
                                               :content=>@user.name)
       end
     end

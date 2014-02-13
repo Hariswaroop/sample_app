@@ -1,6 +1,43 @@
-
-<h1>Sample App</h1>
+<div class="container">
+<h1>About 'Have fun'</h1>
 <p>
-this is about page
+this website is constructed in ruby on rails as per studying the ruby on rails book.
+<br/>Soon adding some more features...
 </p>
+<br/><p>
+11.4.1 Extensions to the sample application<br/>
 
+The proposed extensions in this section are mostly inspired either by general features common to web applications, such as password reminders and email confirmation, or features specific to our type of sample application, such as search, replies, and messaging. Implementing one or more of these application extensions will help you make the transition from following a tutorial to writing original applications of your own.<br/>
+
+Don’t be surprised if it’s tough going at first; the blank slate of a new feature can be quite intimidating. To help get you started, I can give two pieces of general advice. First, before adding any feature to a Rails application, take a look at the RailsCasts archive to see if Ryan Bates has already covered the subject.14 If he has, watching the relevant RailsCast first will often save you a ton of time. Second, always do extensive Google searches on your proposed feature to find relevant blog posts and tutorials. Web application development is hard, and it helps to learn from the experience (and mistakes) of others.<br/>
+
+Many of the following features are quite challenging, and I have given some hints about the tools you might need to implement them. Even with hints, they are much more difficult than the book’s end-of-chapter exercises, so don’t be discouraged if you can’t solve them without considerable effort. Due to time constraints, I am not available for one-on-one assistance, but if there is sufficient interest I might release standalone article/screencast bundles on some of these extensions in the future; go to the main Rails Tutorial website at http://railstutorial.org/ and subscribe to the news feed to get the latest updates.<br/>
+Replies
+
+Twitter allows users to make “@replies”, which are microposts whose first characters are the user’s login preceded by the @ sign. These posts only appear in the feed of the user in question or users following that user. Implement a simplified version of this, restricting @replies to appear only in the feeds of the recipient and the sender. This might involve adding an in_reply_to column in the microposts table and an extra including_replies scope to the Micropost model.<br/>
+
+Since our application lacks unique user logins, you will also have to decide on a way to represent users. One option is to use a combination of the id and the name, such as @1-michael-hartl. Another is to add a unique username to the signup process and then use it in @replies.<br/><br/>
+Messaging<br/>
+
+Twitter supports direct (private) messaging by prefixing a micropost with the letter “d”. Implement this feature for the sample application. The solution will probably involve a Message model and a regular expression match on new microposts.<br/><br/>
+Follower notifications<br/>
+
+Implement a feature to send each user an email notification when they gain a new follower. Then make the notification optional, so that users can opt out if desired. Among other things, adding this feature requires learning how to send mail with Rails. To get started, I suggest viewing the RailsCast on Action Mailer in Rails 3.<br/><br/>
+Password reminders<br/>
+
+Currently, if our application’s users forget their passwords, they have no way to retrieve them. Because of the one-way secure password hashing in Chapter 6, our application can’t email the user’s password, but it can send a link to a reset form. Follow the steps in the RailsCast on Remember Me & Reset Password to fix this omission.<br/><br/>
+Signup confirmation<br/>
+
+Apart from an email regular expression, the sample application currently has no way to verify the validity of a user’s email address. Add an email address verification step to confirm a user’s signup. The new feature should create users in an inactive state, email the user an activation URL, and then change the user to an active state when the URL gets hit. You might want to read up on state machines in Rails to help you with the inactive/active transition.<br/><br/>
+RSS feed<br/>
+
+For each user, implement an RSS feed for their microposts. Then implement an RSS feed for their status feed, optionally restricting access to that feed using an authentication scheme. The RailsCast on generating RSS feeds will help get you started.<br/><br/>
+REST API<br/>
+
+Many websites expose an Application Programmer Interface (API) so that third-party applications can get, post, put, and delete the application’s resources. Implement such a REST API for the sample application. The solution will involve adding respond_to blocks (Section 11.2.5) to many of the application’s controller actions; these should respond to requests for XML. Be careful about security; the API should only be accessible to authorized users.<br/><br/>
+Search<br/>
+
+Currently, there is no way for users to find each other, apart from paging through the user index or viewing the feeds of other users. Implement a search feature to remedy this. Then add another search feature for microposts. The RailsCast on simple search forms will help get you started. If you deploy using a shared host or a dedicated server, I suggest using Thinking Sphinx (following the RailsCast on Thinking Sphinx). If you deploy on Heroku, you should follow the Heroku full text search instructions.<br/>
+
+</p>
+</div>

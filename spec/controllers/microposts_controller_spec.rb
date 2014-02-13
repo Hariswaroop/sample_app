@@ -68,7 +68,7 @@ describe MicropostsController do
 				test_sign_in(wrong_user)
 			end
 			it "should deny access" do
-				delete: destroy, :id=>@micropost
+				delete :destroy, :id=>@micropost
 				response.should redirect_to(root_path)
 			end 
 		end

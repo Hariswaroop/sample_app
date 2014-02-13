@@ -181,7 +181,7 @@ end
   		end
   		it "should not include diffeent user's microposts" do
   			mp3=Factory(:micropost, :user=>Factory(:user, :email=>Factory.next(email))
-			@user.feed should_not include(@mp3)
+			@user.feed.should_not include(@mp3)
 	  	end
 
 	  	it "should include the microposts of the followed users" do

@@ -1,3 +1,4 @@
+<div class="container">
 <table class="profile" summary="Profile information">
 <tr>
 	<td class="main">
@@ -14,11 +15,14 @@
 		<%end%>
 
 	</td>
-	<td class="sidebar round">
-		<strong>Name</strong><%= @user.name%></br>
-		<strong>URL</strong><%= link_to user_path(@user),(@user)%></br>
-		<strong>Microposts</strong><%=@user.microposts.count%>
-		<%= render 'shared/stats' %>
+	<td class="sidebar">
+		<table><tr><td class="sidebar inner"><strong>Name</strong></td><td><%= @user.name%></td>	</tr><tr><td class="sidebar inner"><strong>URL</strong></td><td><%= link_to user_path(@user),(@user)%>
+			</td></tr>
+			<tr><td class="sidebar inner"><strong>Microposts</strong></td><td><%=@user.microposts.count%></td></tr>	
+			</table>
+			<%= render 'shared/stats' %>
  		</td>
 	</tr>
+	
 </table>
+</div>

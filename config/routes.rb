@@ -9,18 +9,19 @@ SampleApp::Application.routes.draw do
   resources :sessions, :only=>[:new,:create,:destroy]
   resources :microposts, :only=>[:create,:destroy]
   resources :relationships, :only=>[:create,:destroy]
-  #get "users/new"
+
   get "users/new"
-  root :to=>'pages#home'
-  get '/contact'=>'pages#contact'
-  get '/about'=>'pages#about'
-  get '/help'=>'pages#help'
+  root  'pages#home'
+  #get '/contact'=>'pages#contact'
+  #get '/about'=>'pages#about'
+  #get '/help'=>'pages#help'
   get '/signup'=>'users#new'
   get '/signin'=>'sessions#new'
   get '/signout'=>'sessions#destroy' 
-  #match '/contact',:to=>'pages#contact'
-  #match '/about',:to=>'pages#about'
-  #match '/help',:to=>'pages#help'
+  
+  match '/contact',to: 'pages#contact', via: 'get'
+  match '/about',:to=>'pages#about', via: 'get'
+  match '/help',:to=>'pages#help', via: 'get'
  
   
   # The priority is based upon order of creation: first created -> highest priority.

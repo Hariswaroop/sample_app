@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe RelationshipController do
+describe RelationshipsController do
 	describe "access control" do
 		it "should require signin for create" do
 			post :create
@@ -45,7 +45,7 @@ describe RelationshipController do
 			lambda do
 				delete :destroy, :id=>@relationship
 				response.should redirect_to(user_path(@followed))
-			end.should change(Relationship, :count).by-1)	
+			end.should change(Relationship, :count).by(-1)	
 		end	
 		it "should destroy a relationship with AJAX" do
 			lambda do
