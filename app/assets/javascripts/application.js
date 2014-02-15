@@ -14,3 +14,11 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+// $(document).ready(function() {
+//     // get data every 10 seconds and refresh myDiv
+//     var pingAfter = 10000;  
+//     var refreshId = setInterval(function() {
+//         $("#myDiv").load('/');
+//     }, pingAfter);
+// });

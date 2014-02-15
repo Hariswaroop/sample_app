@@ -8,7 +8,7 @@ class MicropostsController < ApplicationController
 		else
 			@feed_items=[] #current_user.feed.paginate(:page=>params[:page])
 			render 'pages/home'
-
+			
 		end	
 	end
 
