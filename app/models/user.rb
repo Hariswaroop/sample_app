@@ -31,6 +31,8 @@ class User < ActiveRecord::Base
   validates :password, :presence =>true,
 				    :confirmation=>true,
 					  :length=>{:within=>6..40}
+
+  has_many :replies, foreign_key: "to_id", class_name: "Micropost"
  
  before_save :encrypt_password
   
@@ -41,7 +43,7 @@ class User < ActiveRecord::Base
   end
 
   def feed            
-      Micropost.from_users_followed_by(self)
+      Micropost.from_users_followed_by_including_replies(self)
   end
 
   def following?(followed)
@@ -55,6 +57,20 @@ class User < ActiveRecord::Base
 
   def unfollow!(followed)
     relationships.find_by_followed_id(followed).destroy
+  end
+
+  def shorthand
+   # name.gsub(/\s*/,"")
+   name.gsub(/ /,"_")
+  end
+  def self.shorthand_to_name(sh)
+   # name.gsub(/\s*/,"")
+   sh.gsub(/_/," ")
+  end
+  def self.find_by_shorthand(shorthand_name)
+    all = where(name: User.shorthand_to_name(shorthand_name))
+    return nil if all.empty?
+    all.first
   end
   
   class << self

@@ -22,6 +22,5 @@ private
 		@micropost=Micropost.find_by_id(params[:id])
 		redirect_to	root_path unless current_user?(@micropost.user) 
 	end
-
 end
 
