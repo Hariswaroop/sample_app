@@ -37,6 +37,7 @@ class UsersController < ApplicationController
   def create
  	  @user=User.new(user_params)
 	   if @user.save
+      UserMailer.welcome_email(@user).deliver
       sign_in @user
 	     redirect_to @user, :flash=>{:success=>"welcome to Have Fun!"} 
      else
