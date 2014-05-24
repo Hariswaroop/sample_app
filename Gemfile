@@ -58,6 +58,8 @@ end
  # Use sqlite3 as the database for Active Record 
  gem 'sqlite3', '1.3.8', group: [:development, :test]
 
+ gem 'mail','2.5.4'
+
 group :development do
  gem 'autotest'
  gem 'faker','1.2.0', :require=>false
