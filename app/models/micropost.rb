@@ -20,6 +20,7 @@ class Micropost < ActiveRecord::Base
 	scope :from_users_followed_by, lambda {|user| followed_by(user)}
 	# same, including replies.
   	scope :from_users_followed_by_including_replies, lambda { |user| followed_by_including_replies(user) }
+	
 	private
 
 	def self.followed_by(user) 
