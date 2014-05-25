@@ -59,6 +59,7 @@ end
  gem 'sqlite3', '1.3.8', group: [:development, :test]
 
  gem 'mail','2.5.4'
+ gem 'state_machine','1.2.0'
 
 group :development do
  gem 'autotest'
